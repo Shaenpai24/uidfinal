@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar - Study Sync</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Firebase SDK -->
+   <!-- Firebase SDK -->
+        <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js"></script>
+
+    <script src="calendar.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <img src="logo.png" alt="Study Sync Logo" class="logo">
+        <h1 class="htitle">Study Sync</h1>
+        <div class="sidebar">
+            <a href="index.html"><button>Home</button></a>
+            <a href="flashcards.html"><button>Flash Cards</button></a>
+            <a href="pomodoro.html"><button>Pomodoro</button></a>
+            <a href="quiz.html"><button>Quiz</button></a>
+            <a href="calendar.html"><button>Calendar</button></a>
+        </div>
+    </header>
+
+    <div class="container">
+       
+
+        <div class="calendar-wrapper">
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button class="nav-button" id="prevMonth">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <h2 id="monthYear">Month Year</h2>
+                    <button class="nav-button" id="nextMonth">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="calendar-grid">
+                    <div class="weekdays">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    <div class="days" id="calendarDays"></div>
+                </div>
+            </div>
+
+            <div class="reminder-sidebar">
+                <div class="reminder-header">
+                    <h3>Reminders</h3>
+                    <button id="addReminderBtn" class="add-reminder-btn">
+                        <i class="fas fa-plus"></i> Add Reminder
+                    </button>
+                </div>
+                <div class="reminders-list" id="remindersList"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reminder Modal -->
+    <div class="modal" id="reminderModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Add Reminder</h3>
+            <form id="reminderForm">
+                <div class="form-group">
+                    <label for="reminderTitle">Title</label>
+                    <input type="text" id="reminderTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="reminderDate">Date</label>
+                    <input type="date" id="reminderDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="reminderTime">Time</label>
+                    <input type="time" id="reminderTime" required>
+                </div>
+                <div class="form-group">
+                    <label for="reminderDescription">Description</label>
+                    <textarea id="reminderDescription" rows="3"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Save Reminder</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Study Sync. All rights reserved.
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flash Cards - Study Sync</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Study Sync Logo" class="logo">
+    <h1 class="htitle">Study Sync</h1>
+    <div class="sidebar">
+      <a href="index.html"><button>Home</button></a>
+      <a href="flashcards.html"><button>Flash Cards</button></a>
+      <a href="pomodoro.html"><button>Pomodoro</button></a>
+      <a href="quiz.html"><button>Quiz Chat</button></a>
+      <a href="calendar.html"><button>Calendar</button></a>
+    </div>
+  </header>
+  
+
+  <div class="container">
+    <div class="main-content">
+      <!-- Flash Card Form -->
+      <div class="form-container">
+        <input type="text" id="question" placeholder="Enter Question" />
+        <input type="text" id="answer" placeholder="Enter Answer" />
+        <button onclick="addFlashCard()">Add Flash Card</button>
+      </div>
+
+      <!-- Flash Cards Display -->
+      <div id="flashcards" class="cards-container"></div>
+    </div>
+  </div>
+
+  <footer>
+    “Don’t watch the clock; do what it does. Keep going.” – Sam Levenson
+  </footer>
+
+  <script src="flashcards.js"></script>
+</body>
+</html>
